@@ -23,6 +23,11 @@
   scroll-behavior: smooth;
 }
 
+*::selection {
+  background: #ff0000;
+  color: white;
+}
+
 body {
   overflow: hidden;
 }

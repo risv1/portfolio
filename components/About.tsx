@@ -14,7 +14,7 @@ export default function About() {
     ]
 
     return (
-      <div id="about" className="w-full h-full flex px-40 py-20 xl:flex-row lg:flex-row flex-col gap-5">
+      <div id="about" className="w-full h-full flex xl:px-40 lg:px-40 px-10 py-20 xl:flex-row lg:flex-row flex-col gap-5">
         <div className="xl:w-[60%] lg:w-[60%] w-full h-full flex flex-col gap-7">
           <h1 className="text-6xl font-extrabold text-white">
             About<span className="text-primary">.</span>
@@ -38,7 +38,7 @@ export default function About() {
             <div className="w-full h-2/5 grid grid-cols-4 gap-2">
                 {tools.map((tool) => (
                     <div key={tool.id} className="w-full h-fit p-3 rounded-lg flex justify-center items-center hover:bg-red-700 duration-150 ease-in-out bg-primary">
-                        <p className="text-white text-sm font-bold">{tool.name}</p>
+                        <p className="text-white text-xs font-bold">{tool.name}</p>
                     </div>
                 ))}
             </div>

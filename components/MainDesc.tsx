@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MainDesc() {
   return (
-    <div className="w-full h-full flex p-40 flex-row gap-5">
+    <div className="w-full h-full flex xl:p-40 lg:p-40 p-10 flex-row gap-5">
       <div className="flex flex-col gap-5">
         <h1 className="text-7xl text-white font-extrabold">
           Hi, I<span className="text-primary">'</span>m Rishi
@@ -13,7 +13,7 @@ export default function MainDesc() {
           <span className="font-extrabold text-primary">Web Developer</span> and{" "}
           <span className="font-extrabold text-primary">AI enthusiast</span>.
         </h2>
-        <p className="text-xl font-light text-white w-2/3 text-start">
+        <p className="text-xl font-light text-white xl:w-2/3 lg:w-2/3 w-full text-start">
           I'm an undergraduate student pursuing my B.Tech in Computer Science
           and Engineering. I have a passion for building web applications and
           exploring the field of AI.
