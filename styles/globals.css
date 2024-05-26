@@ -20,6 +20,7 @@
   scrollbar-width: thin;
   scrollbar-color: red transparent;
   scrollbar-arrow-color: red;
+  scroll-behavior: smooth;
 }
 
 body {
