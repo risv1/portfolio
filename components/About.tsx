@@ -14,8 +14,8 @@ export default function About() {
     ]
 
     return (
-      <div id="about" className="w-full h-full flex px-40 py-20 flex-row gap-5">
-        <div className="w-[60%] h-full flex flex-col gap-7">
+      <div id="about" className="w-full h-full flex px-40 py-20 xl:flex-row lg:flex-row flex-col gap-5">
+        <div className="xl:w-[60%] lg:w-[60%] w-full h-full flex flex-col gap-7">
           <h1 className="text-6xl font-extrabold text-white">
             About<span className="text-primary">.</span>
           </h1>
@@ -33,7 +33,7 @@ export default function About() {
               projects to understand the concepts better. 
           </p>
         </div>
-        <div className="w-[40%] h-full flex flex-col items-center gap-5">
+        <div className="xl:w-[40%] lg:w-[40%] w-full h-full flex flex-col items-center gap-5">
           <h2 className="text-white font-bold text-3xl">What I use<span className="text-primary">...</span></h2>
             <div className="w-full h-2/5 grid grid-cols-4 gap-2">
                 {tools.map((tool) => (
