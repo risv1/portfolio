@@ -13,7 +13,7 @@ export default function Contact() {
         opportunities and collaborations. You can reach me through{" "}
         <a
           target="_blank"
-          href="https://www.linkedin.com/in/rishi-viswanathan-b4737a264/"
+          href="https://www.linkedin.com/in/rishiviswanathan16"
           className="text-primary hover:text-red-600"
         >
           LinkedIn
