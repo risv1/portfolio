@@ -13,11 +13,11 @@ const PersonalWebsite: React.FC = () => {
   ];
 
   const projects = [
-    { title: "StudyBuddy", description: "Helps students and teachers find study materials with AI agents." },
-    { title: "Daily", description: "Nuxt.js app to manage everyday schedule and frequent visits." },
-    { title: "Xtrabite", description: "Online food delivery database management with Next.js, FastAPI and OracleDB." },
-    { title: "Codebin", description: "Nuxt.js app to upload, manage and share code files." },
-    { title: "SnapSave", description: "Event ticket purchasing and management app with Remix.js and Go Fiber." }
+    { title: "StudyBuddy", description: "Helps students and teachers find study materials with AI agents.", projectLink: "https://github.com/risv1/StudyBuddy" },
+    { title: "Daily", description: "Nuxt.js app to manage everyday schedule and frequent visits.", projectLink: "https://github.com/risv1/Daily" },
+    { title: "Xtrabite", description: "Online food delivery database management with Next.js, FastAPI and OracleDB.", projectLink: "https://github.com/risv1/Xtrabite" },
+    { title: "Codebin", description: "Nuxt.js app to upload, manage and share code files.", projectLink: "https://github.com/risv1/Codebin" },
+    { title: "SnapSave", description: "Event ticket purchasing and management app with Remix.js and Go Fiber.", projectLink: "https://github.com/risv1/SnapSave" }
   ];
 
   return (
@@ -48,6 +48,9 @@ const PersonalWebsite: React.FC = () => {
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
+          <a target='_blank' href="https://github.com/risv1?tab=repositories" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">
+            View More Projects
+          </a>
         </Section>
 
         <Section title="Contact">
