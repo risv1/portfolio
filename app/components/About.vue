@@ -23,8 +23,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <section id="about" ref="sectionRef" class="py-20 min-h-screen w-full bg-inherit">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 flex flex-col justify-center items-center">
+    <section id="about" ref="sectionRef" class="py-20 min-h-screen flex justify-center bg-inherit lg:pl-0 pl-4">
+        <div class="w-2/3 mx-auto px-6 sm:px-8 md:px-12 flex flex-col justify-center items-center">
             <h2 class="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text 
                 bg-gradient-to-r from-purple-600 to-pink-600 
                 transform transition-all duration-700 

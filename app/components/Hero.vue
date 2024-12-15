@@ -1,5 +1,5 @@
 <template>
-    <section id="home" class="min-h-screen w-full flex items-center justify-center bg-inherit">
+    <section id="home" class="min-h-screen w-full flex items-center justify-center bg-inherit lg:pl-0 pl-7">
         <div class="text-center lg:pr-0 pr-7">
             <h1 class="text-5xl font-bold mb-4 text-transparent bg-clip-text 
                 bg-gradient-to-r from-purple-600 to-pink-600 

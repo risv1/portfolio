@@ -1,3 +1,11 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'Rishi Viswanathan',
+  description: 'I am a full-stack developer with a passion for building beautiful and functional web applications.',
+})
+
+</script>
+
 <template>
   <main
     class="min-h-screen w-full bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-300 relative">
@@ -16,7 +24,7 @@
       <Theme />
     </div>
     <div class="relative z-10 w-full">
-      <div class="py-8 container mx-auto">
+      <div class="py-8 lg:pr-0 pr-7">
         <Hero />
         <About />
         <Journey />
