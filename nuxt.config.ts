@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
   ],
   ssr: false,
-  devtools: { enabled: true },
   css: ["./app/app.css"],
   srcDir: "app",
   serverDir: "server",
