@@ -32,8 +32,8 @@ const isOpen = ref(false)
 
                 <button @click="isOpen = !isOpen" 
                         class="md:hidden p-2.5 rounded-md transition-all duration-300
-                               hover:bg-neutral-100 dark:hover:bg-neutral-800
-                               focus:outline-none focus:ring-2 focus:ring-red-500/20">
+                               hover:bg-neutral-100 bg-white dark:bg-black dark:hover:bg-neutral-800
+                               border-none hover:cursor-pointer">
                     <Icon :name="isOpen ? 'mdi:close' : 'mdi:menu'"
                           class="h-6 w-6 text-neutral-800 dark:text-white transition-colors duration-300" />
                 </button>
