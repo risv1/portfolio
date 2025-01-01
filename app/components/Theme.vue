@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <button class="border-none bg-inherit p-2" @click="toggleColorMode">
+  <button class="border-none bg-inherit hover:cursor-pointer p-2" @click="toggleColorMode">
     <Icon v-if="isDark" name="solar:moon-bold" class="p-1 text-white" />
     <Icon v-else name="solar:sun-bold" class="p-1 text-black" />
   </button>

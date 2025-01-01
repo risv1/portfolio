@@ -1,9 +1,4 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const sectionRef = ref(null)
-const isVisible = ref(false)
-
 const techStack = [
     {
         name: 'Languages',
@@ -40,94 +35,42 @@ const techStack = [
         ]
     }
 ]
-
-onMounted(() => {
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            isVisible.value = entry.isIntersecting
-        },
-        { threshold: 0.1 }
-    )
-
-    if (sectionRef.value) {
-        observer.observe(sectionRef.value)
-    }
-
-    return () => {
-        if (sectionRef.value) {
-            observer.unobserve(sectionRef.value)
-        }
-    }
-})
 </script>
 
 <template>
-    <section ref="sectionRef" id="tech-stack" class="py-20 bg-inherit">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text 
-          bg-gradient-to-r from-purple-600 to-pink-600 
-          transform transition-all duration-500 
-          opacity-0 translate-y-10" :class="{ 'animate-fadeInUp': isVisible }">
-                Tech Stack
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div v-for="(category, index) in techStack" :key="category.name" class="group bg-neutral-100 dark:bg-neutral-800 bg-opacity-40 p-8 rounded-2xl shadow-lg 
-              transform transition-all duration-500 
-              opacity-0 translate-y-10
-              hover:scale-105 hover:shadow-2xl"
-                    :class="{ [`animate-fadeInUp delay-${index * 100}`]: isVisible }">
-                    <h3 class="text-2xl font-semibold mb-6 text-transparent bg-clip-text 
-              bg-gradient-to-r from-purple-600 to-pink-600 
-              transition-transform group-hover:-translate-y-2">
-                        {{ category.name }}
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span v-for="tech in category.technologies" :key="tech" class="px-4 py-2 bg-white dark:bg-neutral-800 
-                rounded-full text-xl font-medium 
-                transform transition-all duration-300 
-                hover:scale-110 hover:shadow-md 
-                bg-gradient-to-r from-purple-500 to-pink-500 
-                text-white hover:from-purple-600 hover:to-pink-600 flex flex-row items-center">
-                            <Icon :name="tech.icon" class="mr-2" />
-                            {{ tech.name }}
-                        </span>
-                    </div>
-                </div>
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-black dark:text-white mb-16">
+          Tech Stack
+          <span class="text-red-500 dark:text-red-500">.</span>
+        </h2>
+
+        <div class="space-y-16">
+          <div v-for="category in techStack" 
+               :key="category.name" 
+               class="tech-category group">
+            <div class="flex items-baseline mb-8">
+              <h3 class="text-xl font-medium text-black dark:text-white">
+                {{ category.name }}
+              </h3>
+              <div class="ml-4 h-[1px] flex-grow bg-neutral-200 dark:bg-neutral-800 transform origin-left transition-transform duration-300 group-hover:scale-x-100"></div>
             </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4">
+              <div v-for="tech in category.technologies" 
+                   :key="tech.name" 
+                   class="tech-item group/item">
+                <div class="flex items-center space-x-4 p-2 transition-all duration-300 hover:translate-x-2 hover:cursor-pointer">
+                  <Icon :name="tech.icon" 
+                        class="h-6 w-6 text-neutral-600 dark:text-neutral-400 group-hover/item:text-red-500 dark:group-hover/item:text-red-500 transition-colors" />
+                  <span class="text-neutral-600 dark:text-neutral-300 group-hover/item:text-black dark:group-hover/item:text-white transition-colors">
+                    {{ tech.name }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 </template>
-
-<style scoped>
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fadeInUp {
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.delay-0 {
-    animation-delay: 0s;
-}
-
-.delay-100 {
-    animation-delay: 0.1s;
-}
-
-.delay-200 {
-    animation-delay: 0.2s;
-}
-
-.delay-300 {
-    animation-delay: 0.3s;
-}
-</style>

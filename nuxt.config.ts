@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@pinia/nuxt",
   ],
-  ssr: false,
+  ssr: true,
   css: ["./app/app.css"],
   srcDir: "app",
   serverDir: "server",
