@@ -1,4 +1,14 @@
 <script setup>
+useHead({
+  title: 'Rishi | Projects',
+  meta: [
+    {
+      name: 'description',
+      content: 'A simple portfolio website built with Vue 3 and Vite'
+    }
+  ]
+})
+
 const projects = [
     {
         title: "Vaidya",
@@ -32,7 +42,7 @@ const projects = [
     },
     {
         title: "Dhwani",
-        description: "Application designed to streamline interactions between supervisors of hospitals, therapists and patients, with auto speech assesment tests.",
+        description: "Application designed to streamline interactions between supervisors of hospitals, therapists and patients, with auto speech assesment tests",
         projectLink: "https://github.com/risv1",
         tag: "Full Stack"
     },
