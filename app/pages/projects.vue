@@ -67,7 +67,7 @@ const projects = [
                     
                     <a :href="project.projectLink" 
                        target="_blank"
-                       class="block group decoration-none relative p-6 -mx-6 rounded-lg transition-all duration-300">
+                       class="block group decoration-none relative p-6 -mx-6 md:mr-0 mr-3 rounded-lg transition-all duration-300">
                         
                         <div class="flex items-start justify-between mb-4">
                             <div>
