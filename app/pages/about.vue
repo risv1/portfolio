@@ -2,15 +2,53 @@
 
 const colorMode = useColorMode()
 
+const cache = ref(new Map())
+const CACHE_DURATION = 600000
+
+const getCachedUrl = (type: string, mode: string) => {
+    const cacheKey = `${type}-${mode}`
+    const cachedData = cache.value.get(cacheKey)
+
+    if (cachedData && (Date.now() - cachedData.timestamp) < CACHE_DURATION) {
+        return cachedData.url
+    }
+
+    const newUrl = `https://my-realm.vercel.app/api/${type}/svg?username=risv1&background=${mode === 'dark' ? 'black' : 'white'}`
+
+    cache.value.set(cacheKey, {
+        url: newUrl,
+        timestamp: Date.now()
+    })
+
+    return newUrl
+}
+
 const stats = ref({
-    github: `https://my-realm.vercel.app/api/stats/svg?username=risv1&background=${colorMode.value === 'dark' ? 'black' : 'white'}`,
-    languages: `https://my-realm.vercel.app/api/languages/svg?username=risv1&background=${colorMode.value === 'dark' ? 'black' : 'white'}`,
-    leetcode: 'https://my-realm.vercel.app/api/leetcode/svg?username=risv1'
+  github: getCachedUrl('stats', colorMode.value),
+  languages: getCachedUrl('languages', colorMode.value),
+  leetcode: 'https://my-realm.vercel.app/api/leetcode/svg?username=risv1'
 })
 
 watch(colorMode, (newMode) => {
-    stats.value.github = `https://my-realm.vercel.app/api/stats/svg?username=risv1&background=${newMode === 'dark' ? 'black' : 'white'}`
-    stats.value.languages = `https://my-realm.vercel.app/api/languages/svg?username=risv1&background=${newMode === 'dark' ? 'black' : 'white'}`
+  stats.value.github = getCachedUrl('stats', newMode)
+  stats.value.languages = getCachedUrl('languages', newMode)
+})
+
+const clearExpiredCache = () => {
+  const now = Date.now()
+  for (const [key, value] of cache.value.entries()) {
+    if (now - value.timestamp > CACHE_DURATION) {
+      cache.value.delete(key)
+    }
+  }
+}
+
+onMounted(() => {
+  const cleanup = setInterval(clearExpiredCache, CACHE_DURATION)
+  
+  onUnmounted(() => {
+    clearInterval(cleanup)
+  })
 })
 
 const work = [
