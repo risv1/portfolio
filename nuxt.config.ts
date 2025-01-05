@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@pinia/nuxt",
   ],
-  ssr: true,
+  ssr: false,
   css: ["./app/app.css"],
   srcDir: "app",
   serverDir: "server",
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/images/logo.png" },
+        { rel: "icon", type: "image/x-icon", href: "/images/logo.svg" },
       ],
     },
   },

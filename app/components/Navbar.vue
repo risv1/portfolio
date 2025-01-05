@@ -8,7 +8,7 @@ const isOpen = ref(false)
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0 transition-transform duration-300 hover:scale-105">
                     <NuxtLink to="/" class="flex items-center">
-                        <img src="/images/logo.png" alt="Logo" class="h-12 w-12" />
+                        <img src="/images/logo.svg" alt="Logo" class="h-12 w-12" />
                     </NuxtLink>
                 </div>
 
@@ -16,6 +16,10 @@ const isOpen = ref(false)
                     <NuxtLink to="/"
                         class="text-lg decoration-none font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-all duration-300 relative nav-link">
                         Home
+                    </NuxtLink>
+                    <NuxtLink to="/about"
+                        class="text-lg decoration-none font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-all duration-300 relative nav-link">
+                        About
                     </NuxtLink>
                     <NuxtLink to="/projects"
                         class="text-lg decoration-none font-medium text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-all duration-300 relative nav-link">

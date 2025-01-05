@@ -1,12 +1,12 @@
 <script setup>
 useHead({
-  title: 'Rishi | Projects',
-  meta: [
-    {
-      name: 'description',
-      content: 'A simple portfolio website built with Vue 3 and Vite'
-    }
-  ]
+    title: 'Rishi | Projects',
+    meta: [
+        {
+            name: 'description',
+            content: 'A simple portfolio website built with Vue 3 and Vite'
+        }
+    ]
 })
 
 const projects = [
@@ -50,7 +50,7 @@ const projects = [
 </script>
 
 <template>
-    <main class="min-h-screen py-16 bg-white dark:bg-black">
+    <main v-cloak class="min-h-screen py-16 bg-white dark:bg-black">
         <div class="max-w-4xl mx-auto px-6">
             <h1 class="text-4xl font-bold text-black dark:text-white mb-4 animate-fade-in">
                 Projects<span class="text-red-500">.</span>
@@ -60,38 +60,42 @@ const projects = [
             </p>
 
             <div class="space-y-16">
-                <div v-for="(project, index) in projects" 
-                     :key="project.title"
-                     :style="`animation-delay: ${index * 0.1}s`"
-                     class="project-card animate-fade-in">
-                    
-                    <a :href="project.projectLink" 
-                       target="_blank"
-                       class="block group decoration-none relative p-6 -mx-6 md:mr-0 mr-3 rounded-lg transition-all duration-300">
-                        
-                        <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold text-black dark:text-white mb-2 group-hover:text-red-500 transition-colors duration-300">
-                                    {{ project.title }}
-                                </h3>
-                                <span class="text-sm text-red-500 font-medium">
-                                    {{ project.tag }}
-                                </span>
-                            </div>
-                            <div class="text-neutral-600 dark:text-neutral-400 group-hover:text-red-500 transition-all duration-300 transform group-hover:scale-110">
-                                <Icon name="mdi:github" class="h-6 w-6" />
-                            </div>
-                        </div>
+                <TransitionGroup name="project" tag="div" class="space-y-16">
+                    <div v-for="(project, index) in projects" :key="project.title"
+                        :style="`animation-delay: ${index * 0.1}s`" class="project-card animate-fade-in">
 
-                        <p class="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
-                            {{ project.description }}
-                        </p>
+                        <a :href="project.projectLink" target="_blank"
+                            class="block group decoration-none relative p-6 -mx-6 md:mr-0 mr-3 rounded-lg transition-all duration-300">
 
-                        <div class="absolute bottom-0 left-0 right-0 h-[5px] bg-gradient-to-r from-transparent via-red-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </a>
-                </div>
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3
+                                        class="text-2xl font-semibold text-black dark:text-white mb-2 group-hover:text-red-500 transition-colors duration-300">
+                                        {{ project.title }}
+                                    </h3>
+                                    <span class="text-sm text-red-500 font-medium">
+                                        {{ project.tag }}
+                                    </span>
+                                </div>
+                                <div
+                                    class="text-neutral-600 dark:text-neutral-400 group-hover:text-red-500 transition-all duration-300 transform group-hover:scale-110">
+                                    <Icon name="mdi:github" class="h-6 w-6" />
+                                </div>
+                            </div>
+
+                            <p class="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed">
+                                {{ project.description }}
+                            </p>
+
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-[5px] bg-gradient-to-r from-transparent via-red-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </a>
+                    </div>
+                </TransitionGroup>
                 <p class="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed animate-fade-in">
-                    View more on my <a href="https://github.com/risv1?tab=repositories" target="_blank" class="text-red-500 dark:text-red-500 hover:underline">GitHub</a>.
+                    View more on my <a href="https://github.com/risv1?tab=repositories" target="_blank"
+                        class="text-red-500 dark:text-red-500 hover:underline">GitHub</a>.
                 </p>
             </div>
         </div>
@@ -109,6 +113,7 @@ const projects = [
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
