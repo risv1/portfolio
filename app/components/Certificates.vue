@@ -19,10 +19,10 @@ defineProps<{
                         border border-neutral-200 dark:border-neutral-800
                         transition-all duration-300 ease-in-out
                         hover:shadow-lg hover:scale-[1.02]
-                        group">
+                        group flex flex-col">
                 <a :href="cert.link" 
                    target="_blank"
-                   class="block no-underline">
+                   class="block no-underline flex flex-col h-full">
                     <div class="flex items-center space-x-4 mb-4">
                         <img :src="cert.icon" 
                              alt="Certificate Icon"
@@ -34,9 +34,9 @@ defineProps<{
                     </div>
                     <img :src="cert.preview"
                          alt="Certificate Preview"
-                         class="w-full h-70 object-cover rounded-lg
+                         class="w-full h-48 object-cover rounded-lg
                                 transition-transform duration-300
-                                group-hover:scale-[1.05]" />
+                                group-hover:scale-[1.05] flex-grow" />
                 </a>
             </div>
         </div>

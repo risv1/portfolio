@@ -85,6 +85,12 @@ const hackathons = [
 
 const certificates = [
     {
+        name: "Red Hat Certified System Administrator",
+        icon: '/images/rhcsa.png',
+        link: '/certs/RHCSA.pdf',
+        preview: '/images/rhcsa-preview.png'
+    },
+    {
         name: 'Cisco Networking Basics',
         icon: '/images/networking-basics.png',
         link: '/certs/Networking_Basics_Badge.pdf',
