@@ -87,12 +87,38 @@ const sortedProjects = computed(() => {
     }))
 })
 
-const cardHeight = ref('300px')
+const cardRefs = ref<HTMLElement[]>([])
+const dynamicCardHeight = ref('auto')
+
+const calculateCardHeight = () => {
+    dynamicCardHeight.value = 'auto'
+    
+    nextTick(() => {
+      const heights = cardRefs.value.map(card => card?.offsetHeight || 0)
+      const maxHeight = Math.max(...heights)
+      if (maxHeight > 0) {
+        dynamicCardHeight.value = `${maxHeight}px`
+      }
+    })
+}
 
 const openGithub = (url: string) => {
   window.open(url, '_blank', 'noopener,noreferrer')
 }
 
+onMounted(() => {
+  calculateCardHeight()
+})
+
+if (process.client) {
+  window.addEventListener('resize', calculateCardHeight)
+}
+
+onBeforeUnmount(() => {
+  if (process.client) {
+    window.removeEventListener('resize', calculateCardHeight)
+  }
+})
 </script>
 
 <template>
@@ -106,9 +132,13 @@ const openGithub = (url: string) => {
         <h2 class="text-xl md:text-2xl font-bold text-black dark:text-white text-center mb-8">{{ yearData.year }}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 max-w-7xl mx-auto">
-          <div v-for="(project, index) in yearData.projects" :key="index" @click="openGithub(project.github)"
+          <div 
+            v-for="(project, index) in yearData.projects" 
+            :key="index" 
+            :ref="el => { if (el) cardRefs[index] = el as HTMLElement }"
+            @click="openGithub(project.github)"
             class="project-card bg-white dark:bg-black rounded-xl p-6 hover:bg-neutral-50 dark:hover:bg-neutral-950 transition-all duration-300 border border-neutral-200 dark:border-neutral-800 cursor-pointer hover:shadow-lg"
-            :style="{ height: cardHeight }">
+            :style="{ height: dynamicCardHeight }">
             <div class="flex flex-col h-full">
               <h3 class="text-lg font-bold text-black dark:text-white mb-3">
                 {{ project.title }}
