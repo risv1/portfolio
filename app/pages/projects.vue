@@ -1,5 +1,18 @@
 <script setup lang="ts">
-import { techIcons } from '~/utils/icons'
+
+useHead({
+  title: "RV / Projects",
+  meta: [
+    {
+      name: "description",
+      content: "Explore my projects showcasing my skills in web development, AI, and more. Discover innovative solutions and technologies I have worked with."
+    },
+    {
+      name: "keywords",
+      content: "projects, web development, AI, machine learning, software engineering, programming"
+    }
+  ]
+})
 
 type Project = {
   title: string;

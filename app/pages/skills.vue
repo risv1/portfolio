@@ -1,5 +1,17 @@
 <script setup lang="ts">
-import { techIcons } from '~/utils/icons'
+useHead({
+  title: "RV / Skills",
+  meta: [
+    {
+      name: "description",
+      content: "Explore my skills and experience in software development, AI, and more. Discover my work history, publications, certifications, and technical expertise."
+    },
+    {
+      name: "keywords",
+      content: "skills, experience, software development, AI, machine learning, publications, certifications"
+    }
+  ]
+})
 
 const experience = [
   {

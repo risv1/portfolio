@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/images/logo-light.svg" },
+        { rel: "icon", type: "image/x-icon", href: "/images/logo.svg" },
       ]
     },
     pageTransition: { 
