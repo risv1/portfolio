@@ -123,12 +123,12 @@ onMounted(() => {
   calculateCardHeight()
 })
 
-if (process.client) {
+if (import.meta.client) {
   window.addEventListener('resize', calculateCardHeight)
 }
 
 onBeforeUnmount(() => {
-  if (process.client) {
+  if (import.meta.client) {
     window.removeEventListener('resize', calculateCardHeight)
   }
 })

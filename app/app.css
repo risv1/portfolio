@@ -30,6 +30,7 @@ body {
 .page-enter-active,
 .page-leave-active {
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .page-enter-from {
@@ -45,6 +46,7 @@ body {
 .layout-enter-active,
 .layout-leave-active {
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .layout-enter-from,
