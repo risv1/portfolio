@@ -25,6 +25,12 @@ type Project = {
 const projects: Record<string, Project[]> = {
   2025: [
     {
+      title: "Showdown",
+      description: "Dynamic tournament management platform for Pokemon battles. Built for competitive players who want to organize epic battles, track team performance, and export comprehensive results.",
+      technologies: ["React", "Hono", "Postgres", "Redis"],
+      github: "https://github.com/risv1/showdown",
+    },
+    {
       title: "Marai",
       description: "Marai is a cloud-based platform that streamlines legal consultations, case management, and AI-driven analysis for law firms and clients.",
       technologies: ["Next", "Go", "Postgres", "Redis", "Swarm", "AWS", "Azure", "Terraform"],

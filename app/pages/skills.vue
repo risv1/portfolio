@@ -15,8 +15,17 @@ useHead({
 
 const experience = [
   {
-    position: "Software Engineer",
-    company: "Vyana Tech",
+    position: "Software Developer Intern",
+    company: "Hexaware Technologies",
+    duration: "Jun 2025 - Aug 2025",
+    type: "Part-time",
+    description: "Developed an initial web platform to manage stock portfolios and analyze the impact of real-time news sentiment on portfolio performance. Contributed to building a tool to streamline and assist in the authoring of business proposals.",
+    skills: ["React", "FastAPI", "Postgres", "Azure", "Scikit-learn"],
+    proof: ""
+  },
+  {
+    position: "Software Developer Intern",
+    company: "Vyana Technologies",
     duration: "Dec 2024 - Jan 2025",
     type: "Part-time",
     description: "Worked on a MERN stack application with a focus on functionality and performance. Implemented integration testing using Jest to ensure application reliability.",
@@ -71,7 +80,8 @@ const organizations = [
     organization: "FOSS SRM",
     position: "Technical Maintainer",
     duration: "Dec 2024 - Present",
-    description: "Contributing to open source projects and maintaining technical infrastructure.",
+    description: "Organized and conducted \"Unbox Freedom: Dive into FOSS, Docker & Linux\", a workshop exploring the fundamentals of Docker and Linux. Contributing to open source projects and maintaining technical infrastructure.",
+    skills: ["Nuxt", "Docker", "MongoDB"]
   },
 ];
 
@@ -93,14 +103,14 @@ const techStack = {
 
       <div class="max-w-5xl mx-auto space-y-6 px-4">
         <a v-for="(job, index) in experience" :key="index" :href="job.proof" target="_blank" rel="noopener noreferrer"
-          class="block decoration-none group bg-gradient-to-r from-white to-neutral-50 dark:from-black dark:to-neutral-950 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+          class="block decoration-none group dark:bg-black bg-white rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
           <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div class="flex-1">
               <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                 <div>
-                  <h3 class="text-xl font-bold text-black dark:text-white mb-2">{{ job.position }}</h3>
+                  <h3 class="text-xl font-medium text-black dark:text-white mb-2">{{ job.company }}</h3>
                   <div class="flex flex-col sm:flex-row sm:items-center gap-2">
-                    <span class="text-lg text-neutral-700 dark:text-neutral-300 font-semibold">{{ job.company }}</span>
+                    <span class="text-lg text-neutral-700 dark:text-neutral-300 font-semibold">{{ job.position }}</span>
                     <span class="hidden sm:block text-neutral-400">•</span>
                     <span
                       class="w-fit inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium">
@@ -190,7 +200,7 @@ const techStack = {
 
       <div class="max-w-5xl mx-auto space-y-6 px-4">
         <div v-for="(org, index) in organizations" :key="index"
-          class="group bg-gradient-to-r from-white to-neutral-50 dark:from-black dark:to-neutral-950 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md">
+          class="group bg-white dark:bg-black rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md">
           <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div class="flex-1">
               <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
