@@ -19,8 +19,8 @@ const experience = [
     company: "Hexaware Technologies",
     duration: "Jun 2025 - Aug 2025",
     type: "Part-time",
-    description: "Developed an initial web platform to manage stock portfolios and analyze the impact of real-time news sentiment on portfolio performance. Contributed to building a tool to streamline and assist in the authoring of business proposals.",
-    skills: ["React", "FastAPI", "Postgres", "Azure", "Scikit-learn"],
+    description: "Developed a web platform to manage stock portfolios with real-time news sentiment analysis to measure portfolio impact, enabling data-driven investment decisions. Contributed to building an internal tool that streamlined the creation of business proposals, improving efficiency and collaboration across teams.",
+    skills: ["React", "FastAPI", "Postgres", "Azure", "Scikit-learn", "n8n"],
     proof: ""
   },
   {
@@ -28,7 +28,7 @@ const experience = [
     company: "Vyana Technologies",
     duration: "Dec 2024 - Jan 2025",
     type: "Part-time",
-    description: "Worked on a MERN stack application with a focus on functionality and performance. Implemented integration testing using Jest to ensure application reliability.",
+    description: "Worked on a MERN stack application with a focus on enhancing functionality and performance, while implementing integration testing with Jest to ensure system reliability. Collaborated with the team to deliver features aligned with business requirements and improve overall application quality.",
     skills: ["Jest", "Express", "MongoDB", "Node.js"],
     proof: "https://drive.google.com/file/d/1NEhEkyjWK9d96Y025mdUrks-KC5mb2X1/view?usp=sharing"
   }
@@ -70,18 +70,18 @@ const organizations = [
     skills: ["TypeScript", "Go", "Next", "Postgres", "AWS"]
   },
   {
-    organization: "GeeksForGeeks, SRMIST",
-    position: "Vice President",
-    duration: "May 2024 - Present",
-    description: "Organized and conducted \"GraphQL for Geeks\", a workshop on GraphQL. Organized \"Docker for Geeks\", a workshop on Docker. Made GFGSRMIST's recruitment portal for onboarding new members.",
-    skills: ["Nuxt", "Supabase"]
-  },
-  {
     organization: "FOSS SRM",
     position: "Technical Maintainer",
     duration: "Dec 2024 - Present",
     description: "Organized and conducted \"Unbox Freedom: Dive into FOSS, Docker & Linux\", a workshop exploring the fundamentals of Docker and Linux. Contributing to open source projects and maintaining technical infrastructure.",
     skills: ["Nuxt", "Docker", "MongoDB"]
+  },
+  {
+    organization: "GeeksForGeeks, SRMIST",
+    position: "Vice President",
+    duration: "May 2024 - June 2025",
+    description: "Organized and conducted \"GraphQL for Geeks\", a workshop on GraphQL. Organized \"Docker for Geeks\", a workshop on Docker. Made GFGSRMIST's recruitment portal for onboarding new members.",
+    skills: ["Nuxt", "Supabase"]
   },
 ];
 

@@ -46,4 +46,5 @@ export const techIcons: Record<string, string> = {
   "Kubernetes": "logos:kubernetes",
   "Git": "logos:git-icon",
   "scikit-learn": "devicon:scikitlearn",
+  "n8n": "simple-icons:n8n",
 };

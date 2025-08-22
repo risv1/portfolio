@@ -25,6 +25,12 @@ type Project = {
 const projects: Record<string, Project[]> = {
   2025: [
     {
+      title: "MW Scraper",
+      description: "This application combines stock prices, historical performance, and news sentiment to deliver data-driven insights, helping users manage portfolios and make smarter investment decisions.",
+      technologies: ["React", "Hono", "FastAPI", "Postgres", "Scikit-learn", "Swarm"],
+      github: "https://github.com/risv1/mw-scraper",
+    },
+    {
       title: "Showdown",
       description: "Dynamic tournament management platform for Pokemon battles. Built for competitive players who want to organize epic battles, track team performance, and export comprehensive results.",
       technologies: ["React", "Hono", "Postgres", "Redis"],
