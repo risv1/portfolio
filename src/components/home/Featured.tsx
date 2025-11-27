@@ -1,13 +1,13 @@
 import { motion, useScroll } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useRef } from 'react';
 
 interface Project {
     id: string;
     title: string;
     year: string;
     image: string;
-    hoverImage: string; // gif or avif
+    hoverImage: string;
     skills: string[];
 }
 
@@ -15,7 +15,6 @@ const Featured: React.FC = () => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Sample projects - replace with actual data
     const featuredProjects: Project[] = [
         {
             id: '1',
@@ -76,7 +75,6 @@ const Featured: React.FC = () => {
         <section ref={containerRef} className="relative min-h-screen bg-black py-20 px-8 md:px-16 lg:px-24">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Left Side - Scrollable Grid */}
                     <div className="space-y-6">
                         <div className="grid grid-cols-2 gap-4">
                             {featuredProjects.map((project, index) => (
@@ -90,7 +88,6 @@ const Featured: React.FC = () => {
                                     onHoverEnd={() => setHoveredProject(null)}
                                     className="relative aspect-4/5 rounded-lg overflow-hidden cursor-pointer group"
                                 >
-                                    {/* Image */}
                                     <div className="absolute inset-0">
                                         <img
                                             src={hoveredProject === project.id ? project.hoverImage : project.image}
@@ -101,11 +98,9 @@ const Featured: React.FC = () => {
                                                 e.currentTarget.parentElement!.style.background = '#262626';
                                             }}
                                         />
-                                        {/* Overlay */}
                                         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                                     </div>
 
-                                    {/* Title and Year - Hidden until hover */}
                                     <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <h3 className="text-white font-bold text-lg">
                                             {project.title}
@@ -115,7 +110,6 @@ const Featured: React.FC = () => {
                                         </span>
                                     </div>
 
-                                    {/* Skills - Hidden until hover */}
                                     <div className="absolute bottom-4 left-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="flex flex-wrap gap-2">
                                             {project.skills.map((skill, idx) => (
@@ -133,7 +127,6 @@ const Featured: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Side - Sticky Header */}
                     <div className="lg:pl-12 sticky top-24 self-start">
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
@@ -142,7 +135,6 @@ const Featured: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             className="space-y-8"
                         >
-                            {/* Heading with Count */}
                             <div className="space-y-4">
                                 <div className="flex items-baseline gap-4">
                                     <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
@@ -157,13 +149,11 @@ const Featured: React.FC = () => {
                                 </h3>
                             </div>
 
-                            {/* Description */}
                             <p className="text-white/60 text-lg leading-relaxed max-w-md">
                                 A curated selection of my best work, showcasing innovative solutions
                                 across web development, mobile apps, and research projects.
                             </p>
 
-                            {/* View All Button */}
                             <Link to="/projects">
                                 <motion.button
                                     whileHover={{ filter: "brightness(0.9)" }}
@@ -176,7 +166,6 @@ const Featured: React.FC = () => {
                                 </motion.button>
                             </Link>
 
-                            {/* Decorative Element */}
                             <motion.div
                                 className="mt-12 w-full h-px bg-linear-to-r from-white/0 via-white/20 to-white/0"
                                 initial={{ scaleX: 0 }}

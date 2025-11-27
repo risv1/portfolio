@@ -1,42 +1,38 @@
-import { useParams, Navigate } from 'react-router-dom';
-import Default from '../layouts/Default';
-import IntroDescription from '../components/projects/IntroDescription';
-import ProductDescription from '../components/projects/ProductDescription';
-import Gallery from '../components/projects/Gallery';
-import { projectDetails } from '../data/projects';
+import { Navigate, useParams } from "react-router-dom";
+import Gallery from "../components/projects/Gallery";
+import IntroDescription from "../components/projects/IntroDescription";
+import ProductDescription from "../components/projects/ProductDescription";
+import { projectDetails } from "../data/projects";
+import Default from "../layouts/Default";
 
 const ProjectDetail: React.FC = () => {
-    const { slug } = useParams<{ slug: string }>();
+	const { slug } = useParams<{ slug: string }>();
 
-    // If no slug or project not found, redirect to projects page
-    if (!slug || !projectDetails[slug]) {
-        return <Navigate to="/projects" replace />;
-    }
+	if (!slug || !projectDetails[slug]) {
+		return <Navigate to="/projects" replace />;
+	}
 
-    const project = projectDetails[slug];
+	const project = projectDetails[slug];
 
-    return (
-        <Default>
-            <div className="w-full bg-black">
-                {/* Intro Section */}
-                <IntroDescription
-                    title={project.title}
-                    description={project.introDescription}
-                    link={project.link}
-                    backgroundImage={project.introBackground}
-                />
+	return (
+		<Default>
+			<div className="w-full bg-black">
+				<IntroDescription
+					title={project.title}
+					description={project.introDescription}
+					link={project.link}
+					backgroundImage={project.introBackground}
+				/>
 
-                {/* Product Description Section */}
-                <ProductDescription
-                    description={project.productDescription}
-                    productGif={project.productGif}
-                />
+				<ProductDescription
+					description={project.productDescription}
+					productGif={project.productGif}
+				/>
 
-                {/* Gallery Section */}
-                <Gallery images={project.gallery} />
-            </div>
-        </Default>
-    );
+				<Gallery images={project.gallery} />
+			</div>
+		</Default>
+	);
 };
 
 export default ProjectDetail;

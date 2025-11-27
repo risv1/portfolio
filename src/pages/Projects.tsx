@@ -1,27 +1,35 @@
-import { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Default from '../layouts/Default';
-import Table from '../components/projects/Table';
-import { allProjects } from '../data/projects';
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import Table from "../components/projects/Table";
+import { allProjects } from "../data/projects";
+import Default from "../layouts/Default";
 
 const Projects: React.FC = () => {
 	const [industryFilter, setIndustryFilter] = useState<string | null>(null);
 	const [purposeFilter, setPurposeFilter] = useState<string | null>(null);
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-	const industries = Array.from(new Set(allProjects.map(p => p.industry)));
-	const purposes = Array.from(new Set(allProjects.map(p => p.purpose)));
+	const industries = Array.from(new Set(allProjects.map((p) => p.industry)));
+	const purposes = Array.from(new Set(allProjects.map((p) => p.purpose)));
 
 	const filteredProjects = useMemo(() => {
-		return allProjects.filter(project => {
-			const matchIndustry = industryFilter ? project.industry === industryFilter : true;
-			const matchPurpose = purposeFilter ? project.purpose === purposeFilter : true;
+		return allProjects.filter((project) => {
+			const matchIndustry = industryFilter
+				? project.industry === industryFilter
+				: true;
+			const matchPurpose = purposeFilter
+				? project.purpose === purposeFilter
+				: true;
 			return matchIndustry && matchPurpose;
 		});
 	}, [allProjects, industryFilter, purposeFilter]);
 
-	const completedProjects = filteredProjects.filter(p => p.status === 'completed');
-	const upcomingProjects = filteredProjects.filter(p => p.status === 'upcoming');
+	const completedProjects = filteredProjects.filter(
+		(p) => p.status === "completed",
+	);
+	const upcomingProjects = filteredProjects.filter(
+		(p) => p.status === "upcoming",
+	);
 
 	const clearFilters = () => {
 		setIndustryFilter(null);
@@ -47,7 +55,7 @@ const Projects: React.FC = () => {
 								className="flex items-center gap-2 text-white/80 hover:text-white transition-colors px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm"
 							>
 								<span className="text-sm font-medium">Filters</span>
-								<span className="text-xs">{isFilterOpen ? '−' : '+'}</span>
+								<span className="text-xs">{isFilterOpen ? "−" : "+"}</span>
 								{(industryFilter || purposeFilter) && (
 									<span className="ml-2 w-2 h-2 rounded-full bg-white animate-pulse" />
 								)}
@@ -69,16 +77,23 @@ const Projects: React.FC = () => {
 										>
 											<div className="space-y-6">
 												<div>
-													<h3 className="text-xs uppercase tracking-wider text-white/40 mb-3">Industry</h3>
+													<h3 className="text-xs uppercase tracking-wider text-white/40 mb-3">
+														Industry
+													</h3>
 													<div className="flex flex-wrap gap-2">
-														{industries.map(ind => (
+														{industries.map((ind) => (
 															<button
 																key={ind}
-																onClick={() => setIndustryFilter(industryFilter === ind ? null : ind)}
-																className={`text-xs px-3 py-1 rounded-full border transition-all ${industryFilter === ind
-																	? 'bg-white text-black border-white'
-																	: 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
-																	}`}
+																onClick={() =>
+																	setIndustryFilter(
+																		industryFilter === ind ? null : ind,
+																	)
+																}
+																className={`text-xs px-3 py-1 rounded-full border transition-all ${
+																	industryFilter === ind
+																		? "bg-white text-black border-white"
+																		: "bg-transparent text-white/60 border-white/20 hover:border-white/50"
+																}`}
 															>
 																{ind}
 															</button>
@@ -87,16 +102,23 @@ const Projects: React.FC = () => {
 												</div>
 
 												<div>
-													<h3 className="text-xs uppercase tracking-wider text-white/40 mb-3">Purpose</h3>
+													<h3 className="text-xs uppercase tracking-wider text-white/40 mb-3">
+														Purpose
+													</h3>
 													<div className="flex flex-wrap gap-2">
-														{purposes.map(purp => (
+														{purposes.map((purp) => (
 															<button
 																key={purp}
-																onClick={() => setPurposeFilter(purposeFilter === purp ? null : purp)}
-																className={`text-xs px-3 py-1 rounded-full border transition-all ${purposeFilter === purp
-																	? 'bg-white text-black border-white'
-																	: 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
-																	}`}
+																onClick={() =>
+																	setPurposeFilter(
+																		purposeFilter === purp ? null : purp,
+																	)
+																}
+																className={`text-xs px-3 py-1 rounded-full border transition-all ${
+																	purposeFilter === purp
+																		? "bg-white text-black border-white"
+																		: "bg-transparent text-white/60 border-white/20 hover:border-white/50"
+																}`}
 															>
 																{purp}
 															</button>
