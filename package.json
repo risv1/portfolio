@@ -1,37 +1,35 @@
 {
-  "name": "nuxt-app",
-  "type": "module",
+  "name": "portfolio",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs",
-    "lint": "pnpm lint:eslint && pnpm lint:prettier",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . --write"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "biome check --write",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@nuxt/eslint": "^0.7.2",
-    "@nuxt/icon": "^1.9.1",
-    "@tsparticles/basic": "^3.8.1",
-    "@tsparticles/engine": "^3.8.1",
-    "@tsparticles/move-base": "^3.8.1",
-    "@tsparticles/shape-circle": "^3.8.1",
-    "@tsparticles/vue3": "^3.0.1",
-    "@unocss/core": "^0.65.1",
-    "@unocss/nuxt": "^0.65.1",
-    "@vueuse/core": "^11.1.0",
-    "@vueuse/nuxt": "^11.1.0",
-    "nuxt": "^3.14.1592",
-    "unocss": "^0.65.1",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tanstack/react-query": "^5.90.11",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^7.9.6",
+    "react-router-dom": "^7.9.6",
+    "tailwindcss": "^4.1.17",
+    "zod": "^4.1.13",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.2"
+    "@biomejs/biome": "2.3.7",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   }
 }
