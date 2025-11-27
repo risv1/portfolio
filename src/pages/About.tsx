@@ -1,9 +1,86 @@
-const About: React.FC = () => {
-    return (
-        <div>
-            <h1>About</h1>
-        </div>
-    )
-}
+import { motion } from "framer-motion";
+import Default from "../layouts/Default";
+import Description from "../components/about/Description";
+import DetailsCard from "../components/common/DetailsCard";
+import mountains from "../assets/mountains.jpg";
 
-export default About
+import { educationData, communitiesData } from "../data/about";
+
+const About: React.FC = () => {
+
+	return (
+		<Default>
+			<div className="relative min-h-screen w-full">
+				{/* Fixed Background with Dark Overlay */}
+				<div className="fixed inset-0 z-0">
+					<img
+						src={mountains}
+						alt="Mountains Background"
+						className="w-full h-full object-cover"
+					/>
+					<div className="absolute inset-0 bg-black/70" />
+				</div>
+
+				{/* Content Container */}
+				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 min-h-screen">
+
+						<div className="lg:h-[80vh] md:h-[70vh] h-[90vh] lg:sticky lg:top-0 flex flex-col justify-end pb-12 lg:pb-24 pt-24 lg:pt-0">
+							<Description />
+						</div>
+
+						<div className="py-12 lg:py-24 space-y-20">
+							<div className="space-y-12">
+								<motion.h2
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 1.0, ease: "easeOut" }}
+									className="text-3xl font-bold text-white mb-8"
+								>
+									Education
+								</motion.h2>
+								<div className="space-y-12">
+									{educationData.map((edu, index) => (
+										<DetailsCard
+											key={index}
+											{...edu}
+											delay={index * 0.2}
+										/>
+									))}
+								</div>
+							</div>
+
+							{/* Communities Section */}
+							<div className="space-y-12">
+								<motion.h2
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 1.0, ease: "easeOut" }}
+									className="text-3xl font-bold text-white mb-8"
+								>
+									Communities & Organizations
+								</motion.h2>
+								<div className="space-y-12">
+									{communitiesData.map((role, index) => (
+										<DetailsCard
+											key={index}
+											{...role}
+											delay={index * 0.2}
+										/>
+									))}
+								</div>
+							</div>
+
+							{/* Extra padding at bottom for scrolling space */}
+							<div className="h-24" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</Default>
+	);
+};
+
+export default About;
