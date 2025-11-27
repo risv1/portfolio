@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Canvas } from '@react-three/fiber';
+import { PerspectiveCamera } from '@react-three/drei';
+import { Suspense } from 'react';
+import { RobotModel } from './RobotModel';
 
 interface LatestUpdate {
     id: string;
@@ -9,7 +13,6 @@ interface LatestUpdate {
 }
 
 const Hero: React.FC = () => {
-    // Sample latest updates - replace with actual data
     const latestUpdates: LatestUpdate[] = [
         {
             id: '1',
@@ -26,16 +29,23 @@ const Hero: React.FC = () => {
     ];
 
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-black">
-            {/* 3D Model Background Container - To be implemented */}
+        <section className="relative h-screen w-full overflow-hidden bg-black">
             <div className="absolute inset-0 z-0">
-                {/* Placeholder for 3D model */}
-                <div className="h-full w-full bg-black" />
+                <Canvas>
+                    <PerspectiveCamera makeDefault position={[0, 0, 4]} />
+                    <ambientLight intensity={0.08} />
+                    <directionalLight 
+                        position={[-3, 5, 2]} 
+                        intensity={0.1} 
+                        color="#ffffff"
+                    />
+                    <Suspense fallback={null}>
+                        <RobotModel />
+                    </Suspense>
+                </Canvas>
             </div>
 
-            {/* Main Content with z-index */}
             <div className="relative z-10 flex h-[calc(100vh-8rem)] items-center justify-center">
-                {/* Work Link - Left Side */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -55,7 +65,6 @@ const Hero: React.FC = () => {
                     </Link>
                 </motion.div>
 
-                {/* Projects Link - Right Side */}
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -76,7 +85,6 @@ const Hero: React.FC = () => {
                 </motion.div>
             </div>
 
-            {/* Latest Updates - Bottom Right */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -93,20 +101,17 @@ const Hero: React.FC = () => {
                             transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                             className="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg max-w-sm transition-all duration-300 hover:brightness-110"
                         >
-                            {/* Image */}
                             <div className="w-16 h-16 shrink-0 bg-neutral-800 rounded-md overflow-hidden">
                                 <img
                                     src={update.image}
                                     alt={update.title}
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
-                                        // Fallback if image fails to load
                                         e.currentTarget.style.display = 'none';
                                     }}
                                 />
                             </div>
 
-                            {/* Content */}
                             <div className="flex-1 min-w-0">
                                 <h4 className="text-white font-semibold text-sm truncate">
                                     {update.title}
