@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import mountains from "../assets/mountains.jpg";
+import mountains from "../assets/backgrounds/mountains.jpg";
 import DetailsCard from "../components/common/DetailsCard";
 import Certification from "../components/work/Certification";
 import WorkDescription from "../components/work/WorkDescription";
@@ -31,15 +31,14 @@ const Work: React.FC = () => {
 
 						<div className="py-12 lg:py-24 space-y-20">
 							<div className="space-y-12">
-								<motion.h2
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 1.0, ease: "easeOut" }}
-									className="text-3xl font-bold text-white mb-8"
-								>
-									Professional
-								</motion.h2>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1.0, ease: "easeOut" }}
+                                    className="text-3xl font-bold text-white mb-8"
+                                >
+                                    Professional
+                                </motion.h2>
 								<div className="space-y-12">
 									{professionalData.map((job, index) => (
 										<DetailsCard key={index} {...job} delay={index * 0.2} />
@@ -48,15 +47,14 @@ const Work: React.FC = () => {
 							</div>
 
 							<div className="space-y-12">
-								<motion.h2
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 1.0, ease: "easeOut" }}
-									className="text-3xl font-bold text-white mb-8"
-								>
-									Publications
-								</motion.h2>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1.0, ease: "easeOut" }}
+                                    className="text-3xl font-bold text-white mb-8"
+                                >
+                                    Publications
+                                </motion.h2>
 								<div className="space-y-12">
 									{publicationsData.map((pub, index) => (
 										<DetailsCard key={index} {...pub} delay={index * 0.2} />
@@ -65,15 +63,14 @@ const Work: React.FC = () => {
 							</div>
 
 							<div className="space-y-12">
-								<motion.h2
-									initial={{ opacity: 0, x: -20 }}
-									whileInView={{ opacity: 1, x: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 1.0, ease: "easeOut" }}
-									className="text-3xl font-bold text-white mb-8"
-								>
-									Certifications
-								</motion.h2>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1.0, ease: "easeOut" }}
+                                    className="text-3xl font-bold text-white mb-8"
+                                >
+                                    Certifications
+                                </motion.h2>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									{certificationsData.map((cert, index) => (
 										<Certification key={index} {...cert} delay={index * 0.1} />

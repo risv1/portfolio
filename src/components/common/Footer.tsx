@@ -8,9 +8,9 @@ const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
 
 	const socialLinks = [
-		{ href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
-		{ href: "https://x.com/your-handle", label: "X" },
-		{ href: "https://github.com/your-username", label: "GitHub" },
+		{ href: "https://www.linkedin.com/in/risv1", label: "LinkedIn" },
+		{ href: "https://x.com/RishiV076", label: "X" },
+		{ href: "https://github.com/risv1", label: "GitHub" },
 	];
 
 	const navLinks = [

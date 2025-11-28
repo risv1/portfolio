@@ -18,13 +18,12 @@ const DetailsCard: React.FC<DetailsCardProps> = ({
 	delay = 0,
 }) => {
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 30 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.1, margin: "-50px" }}
-			transition={{ duration: 1.0, delay, ease: "easeOut" }}
-			className="relative pl-8 border-l border-white/20 hover:border-white/50 transition-colors duration-300"
-		>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay, ease: "easeOut" }}
+            className="relative pl-8 border-l border-white/20 hover:border-white/50 transition-colors duration-300"
+        >
 			<div className="absolute -left-1.5 top-0 w-3 h-3 rounded-full bg-white/20" />
 
 			<div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">

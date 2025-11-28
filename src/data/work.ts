@@ -1,5 +1,5 @@
-import oraclePreview from "../assets/oracle-preview.png";
-import rhcsaPreview from "../assets/rhcsa-preview.png";
+import oraclePreview from "../assets/previews/oracle-preview.png";
+import rhcsaPreview from "../assets/previews/rhcsa-preview.png";
 
 export interface WorkItem {
 	title: string;
@@ -59,14 +59,14 @@ export const certificationsData: CertificationItem[] = [
 		name: "RedHat Certified System Administrator",
 		provider: "Red Hat",
 		image: rhcsaPreview,
-		url: "https://www.credly.com/badges/your-rhcsa-badge",
+		url: "https://drive.google.com/file/d/1HNTw3aRUyYU-yX8FIj0FrJZrtQVDyMSn/view?usp=sharing",
 		year: "2025",
 	},
 	{
 		name: "Oracle Certified Cloud Foundations Associate",
 		provider: "Oracle",
 		image: oraclePreview,
-		url: "https://www.credly.com/badges/your-oracle-badge",
+		url: "https://drive.google.com/file/d/15ZFWvU1SgrDsMMNm70zuqQdb8nUF4FqI/view?usp=sharing",
 		year: "2025",
 	},
 ];
