@@ -4,19 +4,19 @@ import Footer from "../components/common/Footer";
 import Navbar from "../components/common/Navbar";
 
 const Default: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const location = useLocation();
+	const location = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
 
-    return (
-        <div className="min-h-screen bg-black text-white overflow-x-hidden overscroll-none">
-            <Navbar />
-            <main className="w-full overflow-x-hidden">{children}</main>
-            <Footer />
-        </div>
-    );
+	return (
+		<div className="min-h-screen bg-black text-white overflow-x-hidden overscroll-none">
+			<Navbar />
+			<main className="w-full overflow-x-hidden">{children}</main>
+			<Footer />
+		</div>
+	);
 };
 
 export default Default;

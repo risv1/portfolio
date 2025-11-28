@@ -18,15 +18,15 @@ const Certification: React.FC<CertificationProps> = ({
 	delay = 0,
 }) => {
 	return (
-        <motion.a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay, ease: "easeOut" }}
-            className="group relative block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
-        >
+		<motion.a
+			href={url}
+			target="_blank"
+			rel="noopener noreferrer"
+			initial={{ opacity: 0, y: 30 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8, delay, ease: "easeOut" }}
+			className="group relative block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 hover:scale-[1.02]"
+		>
 			<div className="relative aspect-video w-full overflow-hidden bg-neutral-900">
 				<img
 					src={image}
