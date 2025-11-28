@@ -1,0 +1,112 @@
+<svg width="80" height="60" viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .letter-r {
+        stroke-dasharray: 80;
+        stroke-dashoffset: 80;
+        animation: cycleR 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+      }
+      
+      .letter-v {
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+        animation: cycleV 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s infinite;
+      }
+      
+      .underline {
+        stroke-dasharray: 45;
+        stroke-dashoffset: 45;
+        animation: cycleUnderline 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite;
+      }
+      
+      @keyframes cycleR {
+        0%, 100% {
+          stroke-dashoffset: 80;
+          opacity: 0;
+        }
+        25% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        50% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        75% {
+          stroke-dashoffset: 80;
+          opacity: 0;
+        }
+      }
+      
+      @keyframes cycleV {
+        0%, 100% {
+          stroke-dashoffset: 60;
+          opacity: 0;
+        }
+        25% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        50% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        75% {
+          stroke-dashoffset: 60;
+          opacity: 0;
+        }
+      }
+      
+      @keyframes cycleUnderline {
+        0%, 100% {
+          stroke-dashoffset: 45;
+          opacity: 0;
+        }
+        25% {
+          stroke-dashoffset: 0;
+          opacity: 0.7;
+        }
+        50% {
+          stroke-dashoffset: 0;
+          opacity: 0.7;
+        }
+        75% {
+          stroke-dashoffset: 45;
+          opacity: 0;
+        }
+      }
+    </style>
+  </defs>
+  
+  <!-- Clean Straight Letter R -->
+  <path
+    d="M15 15 L15 45 M15 15 L25 15 Q30 15 30 22 Q30 28 25 28 L15 28 M25 28 L32 45"
+    stroke="currentColor"
+    stroke-width="2.8"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="letter-r"
+  />
+  
+  <!-- Clean Straight Letter V -->
+  <path
+    d="M45 15 L52 45 L59 15"
+    stroke="currentColor"
+    stroke-width="2.8"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="letter-v"
+  />
+  
+  <!-- Simple straight underline -->
+  <path
+    d="M15 52 L59 52"
+    stroke="currentColor"
+    stroke-width="2"
+    fill="none"
+    stroke-linecap="round"
+    class="underline"
+  />
+</svg>

@@ -1,55 +1,54 @@
-<script setup lang="ts">
-definePageMeta({
-  title: 'Rishi Viswanathan',
-  description: 'I am a full-stack developer with a passion for building beautiful and functional web applications.',
+<script setup>
+
+useHead({
+  title: "RV / Home",
+  meta: [
+    { name: 'description', content: 'Rishi Viswanathan - Software Developer specializing in application development and deep learning.' },
+    { name: 'keywords', content: 'Rishi Viswanathan, software developer, application development, deep learning, AI, machine learning' },
+    { name: 'author', content: 'Rishi Viswanathan' }
+  ]
 })
 
+const bio = [
+  "Hi, I’m Rishi, a student and developer with a passion for application development and deep learning. I enjoy building thoughtful, user-centric solutions while exploring the potential of intelligent systems to solve real-world challenges.",
+  "In the development space, I focus on creating scalable and maintainable applications that deliver seamless user experiences. Alongside this, I explore the world of deep learning, working on projects that apply AI techniques to uncover insights, automate tasks, and enhance functionality across domains.",
+  "Outside of coding, I enjoy casual gaming, watching anime, and experimenting with 3D modeling as a creative outlet."
+];
+
+const socials = [
+  { name: 'GitHub', icon: 'line-md:github', url: 'https://github.com/risv1' },
+  { name: 'LinkedIn', icon: 'line-md:linkedin', url: 'https://www.linkedin.com/in/rishiviswanathan16' },
+  { name: 'Twitter', icon: 'line-md:twitter-x', url: 'https://x.com/RishiV076' }
+];
 </script>
 
 <template>
-  <main
-    class="min-h-screen w-full bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 transition-colors duration-300 relative">
-    <div class="fixed inset-0 pointer-events-none">
-      <div class="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-pink-50/30 dark:from-purple-900/10 dark:to-pink-900/10 
-            transform transition-all duration-1000 hover:scale-110"></div>
-      <div v-for="n in 3" :key="n"
-        class="absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" :class="[
-          n === 1 ? 'bg-purple-300 dark:bg-purple-700 w-72 h-72 left-0 top-10' : '',
-          n === 2 ? 'bg-pink-300 dark:bg-pink-700 w-96 h-96 right-0 bottom-10' : '',
-          n === 3 ? 'bg-indigo-300 dark:bg-indigo-700 w-64 h-64 left-1/2 top-1/2' : ''
-        ]">
+  <main class="font-roboto px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white tracking-tight">Rishi Viswanathan</h1>
+        <h2 class="text-xl md:text-3xl font-light mb-12 text-neutral-900 dark:text-neutral-200">Software Developer</h2>
       </div>
-    </div>
-    <div class="fixed top-5 right-5 z-20">
-      <Theme />
-    </div>
-    <div class="relative z-10 w-full">
-      <div class="py-8 lg:pr-0 pr-7">
-        <Hero />
-        <About />
-        <Journey />
-        <TechStack />
-        <Projects />
-        <Footer />
+      
+      <div class="space-y-6 mb-16 text-base md:text-lg leading-relaxed">
+        <p v-for="(paragraph, index) in bio" :key="index" class="text-neutral-700 dark:text-neutral-300">
+          {{ paragraph }}
+        </p>
+      </div>
+      
+      <div class="flex justify-center space-x-6 md:space-x-8">
+        <a 
+          v-for="social in socials" 
+          :key="social.name"
+          :href="social.url" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="p-3 md:p-4 rounded-2xl bg-white hover:bg-neutral-50 dark:bg-black dark:hover:bg-neutral-950 transition-all duration-300 decoration-none border border-neutral-200 dark:border-neutral-800"
+        >
+          <Icon :name="social.icon" class="text-2xl md:text-3xl text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors" />
+          <span class="sr-only">{{ social.name }}</span>
+        </a>
       </div>
     </div>
   </main>
 </template>
-
-<style scoped>
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(-20px) translateX(15px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-</style>

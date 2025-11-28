@@ -9,6 +9,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Satoshi-Variable", sans-serif;
 }
 
 .border {
@@ -24,4 +25,32 @@ body {
 .border-4 {
   border-width: 4px;
   border-style: solid;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
 }

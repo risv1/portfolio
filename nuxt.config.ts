@@ -1,13 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-10-24",
-  modules: [
-    "@vueuse/nuxt",
-    "@nuxt/icon",
-    "@unocss/nuxt",
-    "@nuxt/eslint",
-    "@pinia/nuxt",
-  ],
+  devtools: { enabled: false },
+  modules: ["@vueuse/nuxt", "@nuxt/icon", "@unocss/nuxt", "@nuxt/eslint"],
   ssr: false,
   css: ["./app/app.css"],
   srcDir: "app",
@@ -15,14 +10,21 @@ export default defineNuxtConfig({
   unocss: {
     nuxtLayers: true,
   },
-  imports: {
-    dirs: ["./store"],
-  },
   app: {
     head: {
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/images/logo.png" },
-      ],
+        { rel: "icon", type: "image/x-icon", href: "/images/logo.svg" },
+      ]
     },
-  },
+    pageTransition: { 
+      name: 'page', 
+      mode: 'out-in',
+      duration: 300
+    },
+    layoutTransition: { 
+      name: 'layout', 
+      mode: 'out-in',
+      duration: 300
+    }
+  }
 });
