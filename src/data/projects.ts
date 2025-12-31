@@ -100,7 +100,7 @@ export const allProjects: ProjectData[] = [
 		name: "Mewz",
 		purpose: "Personal",
 		industry: "Productivity",
-		year: "2025",
+		year: "2026",
 		slug: "mewz",
 		status: "upcoming",
 		title: "Mewz",
